@@ -1,7 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
+using System;
+
 using NUnit.Framework;
-using MMABooksEFClasses.Models;
+using MMABooksEFClasses.MarisModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace MMABooksTests
 {

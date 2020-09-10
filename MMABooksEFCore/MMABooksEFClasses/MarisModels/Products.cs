@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MMABooksEFClasses.Models
+namespace MMABooksEFClasses.MarisModels
 {
     public partial class Products
     {

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace MMABooksEFClasses.Models
+namespace MMABooksEFClasses.MarisModels
 {
     public partial class MMABooksContext : DbContext
     {
