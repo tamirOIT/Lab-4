@@ -49,12 +49,12 @@ namespace MMABooksTests
         public void GetWithJoinTest()
         {
             // get a list of objects that include the customer id, name, statecode and statename
-            //var customers = dbContext.Customers.Join(
-            //   dbContext.States,
-            //   c => c.StateCode,
-            //   s => s.StateCode,
-            //   (c, s) => new { c.CustomerId, c.Name, c.StateCode, s.StateName }).OrderBy(r => r.StateName).ToList();
-            //Assert.AreEqual(696, customers.Count);
+            var customers = dbContext.Customers.Join(
+               dbContext.States,
+               c => c.State,
+               s => s.StateCode,
+               (c, s) => new { c.CustomerId, c.Name, c.State, s.StateName }).OrderBy(r => r.StateName).ToList();
+            Assert.AreEqual(696, customers.Count);
         }
 
         [Test]
@@ -83,5 +83,6 @@ namespace MMABooksTests
             }
         }
         */
+        
     }
 }
