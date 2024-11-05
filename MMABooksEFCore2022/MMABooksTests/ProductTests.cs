@@ -12,6 +12,8 @@ namespace MMABooksTests
     public class ProductTests
     {
         MMABooksContext dbContext;
+        Products? p;
+        List<Products>? products;
 
         [SetUp]
         public void Setup()
