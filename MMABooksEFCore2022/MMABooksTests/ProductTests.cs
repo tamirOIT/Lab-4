@@ -67,7 +67,10 @@ namespace MMABooksTests
         [Test]
         public void DeleteTest()
         {
-
+            p = dbContext.Products.Find("A4CS");
+            dbContext.Products.Remove(p);
+            dbContext.SaveChanges();
+            Assert.IsNull(dbContext.Products.Find("A4CS"));
         }
 
         [Test]
