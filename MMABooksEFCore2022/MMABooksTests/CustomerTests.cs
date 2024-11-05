@@ -10,8 +10,7 @@ namespace MMABooksTests
 {
     [TestFixture]
     public class CustomerTests
-    {
-        /*
+    {      
         MMABooksContext dbContext;
         Customer? c;
         List<Customer>? customers;
@@ -26,17 +25,31 @@ namespace MMABooksTests
         [Test]
         public void GetAllTest()
         {
+            customers = dbContext.Customers.OrderBy(c => c.Name).ToList();
+            Assert.AreEqual(696, customers.Count);
+            Assert.AreEqual("Abeyatunge, Derek", customers[0].Name);
+            PrintAll(customers);
         }
 
         [Test]
         public void GetByPrimaryKeyTest()
         {
+            c = dbContext.Customers.FirstOrDefault(c => c.Name == "Abeyatunge, Derek");
+            Assert.IsNotNull(c);
+            Assert.AreEqual(157, c.CustomerId); 
+            Console.WriteLine(c.CustomerId);
+
         }
 
         [Test]
         public void GetUsingWhere()
         {
             // get a list of all of the customers who live in OR
+            customers = dbContext.Customers.Where(c => c.StateCode == "OR").OrderBy(c => c.Name).ToList();
+            Assert.AreEqual(5, customers.Count);
+            Assert.AreEqual("OR", customers[0].StateCode);
+            PrintAll(customers);
+
         }
 
         [Test]
@@ -87,6 +100,6 @@ namespace MMABooksTests
                 Console.WriteLine(c);
             }
         }
-        */
+        
     }
 }
