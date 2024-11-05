@@ -25,7 +25,10 @@ namespace MMABooksTests
         [Test]
         public void GetAllTest()
         {
-
+            products = dbContext.Products.OrderBy(p => p.ProductCode).ToList();
+            Assert.AreEqual(16, products.Count);
+            Assert.AreEqual("A4CS", products[0].ProductCode);
+            PrintAll(products);
         }
 
         [Test]
@@ -69,6 +72,14 @@ namespace MMABooksTests
         public void UpdateTest()
         {
 
+        }
+
+        public void PrintAll(List<Products> products)
+        {
+            foreach (Products p in products)
+            {
+                Console.WriteLine(p);
+            }
         }
     }
 }
