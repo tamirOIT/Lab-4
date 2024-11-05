@@ -34,6 +34,10 @@ namespace MMABooksTests
         [Test]
         public void GetByPrimaryKeyTest()
         {
+            p = dbContext.Products.FirstOrDefault(p => p.ProductCode == "A4CS");
+            Assert.IsNotNull(p);
+            Assert.AreEqual("A4CS", p.ProductCode);
+            Console.WriteLine(p.ProductCode);
         }
 
         [Test]
