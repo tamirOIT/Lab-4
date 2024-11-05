@@ -84,7 +84,12 @@ namespace MMABooksTests
         [Test]
         public void UpdateTest()
         {
-            s
+            s = dbContext.States.Find("OR");
+            s.StateName = "Oregon";
+            dbContext.States.Update(s);
+            dbContext.SaveChanges();
+            s = dbContext.States.Find("OR");
+            Assert.AreEqual("Oregon", s.StateName);
         }
 
         public void PrintAll(List<State> states)
