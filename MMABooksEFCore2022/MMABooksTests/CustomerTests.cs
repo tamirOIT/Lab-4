@@ -93,11 +93,14 @@ namespace MMABooksTests
         public void CreateTest()
         {
             c = new Customer();
-            c.CustomerId = 1;
-            c.Name = "Molunguri, A";
+            c.Name = "Random Name";
+            c.Address = "111 Random st";
+            c.City = "Random City";
+            c.StateCode = "OR";
+            c.ZipCode = "11111";
             dbContext.Customers.Add(c);
             dbContext.SaveChanges();
-            Assert.IsNotNull(dbContext.Customers.Find(1));
+            Assert.IsNotNull(dbContext.Customers.Find(697));
         }
 
         [Test]
