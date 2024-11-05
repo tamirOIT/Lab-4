@@ -77,10 +77,13 @@ namespace MMABooksTests
         public void CreateTest()
         {
             p = new Products();
-            p.ProductCode = "A4CS";
+            p.ProductCode = "AAAA";
+            p.Description = "Random Description";
+            p.UnitPrice = 59.50m;
+            p.OnHandQuantity = 1111;
             dbContext.Products.Add(p);
             dbContext.SaveChanges();
-            Assert.IsNotNull(dbContext.Products.Find("A4CS"));
+            Assert.IsNotNull(dbContext.Products.Find("AAAA"));
         }
 
         [Test]
