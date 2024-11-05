@@ -84,7 +84,7 @@ namespace MMABooksTests
         [Test]
         public void UpdateTest()
         {
-
+            s
         }
 
         public void PrintAll(List<State> states)
