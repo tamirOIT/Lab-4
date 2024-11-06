@@ -24,12 +24,10 @@ namespace MMABooksEFClasses.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = ConfigDB.GetMySqlConnectionString();
-
             if (!optionsBuilder.IsConfigured)
             {
-                var serverVersion = new MySqlServerVersion(new Version(8, 0));
-                optionsBuilder.UseMySql(connectionString, serverVersion);
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseMySql("server=127.0.0.1;uid=root;pwd=IagtgfOITi25!;database=MMABooks", Microsoft.EntityFrameworkCore.ServerVersion.Parse("9.0.1-mysql"));
             }
         }
 
